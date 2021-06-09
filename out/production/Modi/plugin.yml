@@ -1,0 +1,11 @@
+name: Modi
+author: Wabezeter
+version: 0.1
+api-version: 1.16
+main: fr.wdss.modi.Main
+commands:
+  mod:
+  chat:
+  freeze:
+  maintenance:
+  gm:
