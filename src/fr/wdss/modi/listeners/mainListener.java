@@ -10,6 +10,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 
 public class mainListener implements Listener {
+    private Main main;
+    public mainListener(Main main) { this.main = main; }
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e){
@@ -22,8 +24,6 @@ public class mainListener implements Listener {
                 p.kickPlayer("§cLe serveur est en §6Maintenance§c, veuilliez revenir quand la maintenance sera terminé !");
             }
         }
-
-        e.setJoinMessage("§8[§a+§8] §f" + p.getName());
         if(p.isOp()){
             p.sendMessage(Main.prefix + "§aCe serveur, est propulsée par le plugin §6Modi§a, crée par §6Mr.Wabezeter §ade la §6W.D.S.S. §a!");
         }

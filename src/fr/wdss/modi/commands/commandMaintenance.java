@@ -21,28 +21,28 @@ public class commandMaintenance implements CommandExecutor {
                         if(Main.Maintenance == false){
                             Main.Maintenance = true;
                             if(Main.Maintenance == true){
-                                sender.sendMessage(Main.prefix + "§aLa §6Maintenance§a, à bien été §6activé §a!");
+                                sender.sendMessage(Main.prefix_success + "La §6Maintenance§f, à été §9Activé");
                                 return true;
                             }else {
                                 sender.sendMessage(Main.prefix_error + "Il y a eu une erreur, merci de réessayer");
                                 return false;
                             }
                         }else {
-                            sender.sendMessage(Main.prefix_error + "La §6Maintenance§c, est déja activé !");
+                            sender.sendMessage(Main.prefix_error + "La Maintenance, est déjà activé !");
                             return false;
                         }
                     }else if(args[0].equalsIgnoreCase("off")){
                         if(Main.Maintenance == true){
                             Main.Maintenance = false;
                             if(Main.Maintenance == false){
-                                sender.sendMessage(Main.prefix + "§aLa §6Maintenance§a, à bien été §6désactivé §a!");
+                                sender.sendMessage(Main.prefix_success + "La §6Maintenance§f, a ete §9Désactivée");
                                 return true;
                             }else{
                                 sender.sendMessage(Main.prefix_error + "Il y a eu une erreur, merci de réessayer");
                                 return false;
                             }
                         }else {
-                            sender.sendMessage(Main.prefix_error + "La §6Maintenance§c, est déja désactivé !");
+                            sender.sendMessage(Main.prefix_error + "La Maintenance, est déjà désactivée !");
                             return false;
                         }
                     }else {

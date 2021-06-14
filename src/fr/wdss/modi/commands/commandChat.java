@@ -31,7 +31,7 @@ public class commandChat implements CommandExecutor {
                             Bukkit.broadcastMessage(" ");
                             i = i + 1;
                         }
-                        p.sendMessage(Main.prefix + "§aLe §6clear §adu chat à bien était effectué !");
+                        p.sendMessage(Main.prefix_success + "Le chat a bien été §9Efface");
                         return true;
                     }else {
                         p.sendMessage(Main.errorCmd + "/chat <clear/mute/unmute> [player]");
@@ -48,15 +48,15 @@ public class commandChat implements CommandExecutor {
                             String target = targetPlayer.getName();
 
                             if(Main.Mute.contains(target)){
-                                p.sendMessage(Main.prefix_error + "Le joueur est déja mute !");
+                                p.sendMessage(Main.prefix_error + "Le joueur " + targetPlayer.getDisplayName() + " est deja mute");
                                 return false;
                             }else {
                                 Main.Mute.add(target);
                                 if(Main.Mute.contains(target)){
-                                    p.sendMessage(Main.prefix + "§aLe joueur : §6" + target + " §aà bien été §6mute §a!");
+                                    p.sendMessage(Main.prefix_success + "Le joueur " + targetPlayer.getDisplayName() + " a ete §9Mute");
                                     return true;
                                 }else {
-                                    p.sendMessage(Main.prefix_error + "Il y a eu une erreur, merci de réessayer");
+                                    p.sendMessage(Main.prefix_error + "Il y a eu une erreur, merci de reessayer");
                                     return false;
                                 }
                             }
@@ -74,15 +74,15 @@ public class commandChat implements CommandExecutor {
                             String target = targetPlayer.getName();
 
                             if(!(Main.Mute.contains(target))){
-                                p.sendMessage(Main.prefix_error + "Le joueur n'est pas mute !");
+                                p.sendMessage(Main.prefix_error + "Le joueur " + targetPlayer.getDisplayName() + " n'est pas mute");
                                 return false;
                             }else {
                                 Main.Mute.remove(target);
                                 if(Main.Mute.contains(target)){
-                                    p.sendMessage(Main.prefix_error + "Il y a eu une erreur, merci de réessayer");
+                                    p.sendMessage(Main.prefix_error + "Il y a eu une erreur, merci de reessayer");
                                     return false;
                                 }else {
-                                    p.sendMessage(Main.prefix + "§aLe joueur : §6" + target + " §aà bien été §6unmmute §a!");
+                                    p.sendMessage(Main.prefix_success + "Le joueur " + targetPlayer.getDisplayName() + " a ete §9Unmmute");
                                     return true;
                                 }
                             }

@@ -34,20 +34,19 @@ public class commandFreeze implements CommandExecutor {
                             return false;
                         }
                         String target = targetPlayer.getName();
-
                         if(Main.Freeze.contains(target)){
                             Main.Freeze.remove(target);
                             if(Main.Freeze.contains(target)){
                                 p.sendMessage(Main.prefix_error + "Il y a eu une erreur, merci de réessayer");
                                 return false;
                             }else {
-                                p.sendMessage(Main.prefix + "§aLe joueur : §6" + target + " §aà bien été §6unfreeze §a!");
+                                p.sendMessage(Main.prefix_success + "Le joueur " + targetPlayer.getDisplayName() + " à été §9Unfreeze");
                                 return true;
                             }
                         }else {
                             Main.Freeze.add(target);
                             if(Main.Freeze.contains(target)){
-                                p.sendMessage(Main.prefix + "§aLe joueur : §6" + target + " §aà bien été §6freeze §a!");
+                                p.sendMessage(Main.prefix_success + "Le joueur " + targetPlayer.getDisplayName() + " à été §9Freeze");
                                 return true;
                             }else {
                                 p.sendMessage(Main.prefix_error + "Il y a eu une erreur, merci de réessayer");
@@ -65,15 +64,15 @@ public class commandFreeze implements CommandExecutor {
                         String target = targetPlayer.getName();
 
                         if(Main.Freeze.contains(target)){
-                            p.sendMessage(Main.prefix_error + "Le joueur : " + target + " est déja freeze !");
+                            p.sendMessage(Main.prefix_error + "Le joueur " + targetPlayer.getDisplayName() + " est déjà freeze");
                             return false;
                         }else {
                             Main.Freeze.add(target);
                             if(Main.Freeze.contains(target)){
-                                p.sendMessage(Main.prefix + "§aLe joueur : §6" + target + " §aà bien été §6freeze §a!");
+                                p.sendMessage(Main.prefix_success + "Le joueur " + targetPlayer.getDisplayName() + " à été §9Freeze");
                                 return true;
                             }else {
-                                p.sendMessage(Main.prefix_error + "Il y a eu une erreur, merci de réessayer");
+                                p.sendMessage(Main.prefix_error + "Il y a eu une erreur, merci de reessayer");
                                 return false;
                             }
                         }
@@ -88,14 +87,14 @@ public class commandFreeze implements CommandExecutor {
                         if(Main.Freeze.contains(target)){
                             Main.Freeze.remove(target);
                             if(Main.Freeze.contains(target)){
-                                p.sendMessage(Main.prefix_error + "Il y a eu une erreur, merci de réessayer");
+                                p.sendMessage(Main.prefix_error + "Il y a eu une erreur, merci de reessayer");
                                 return false;
                             }else {
-                                p.sendMessage(Main.prefix + "§aLe joueur : §6" + target + " §aà bien été §6unfreeze §a!");
+                                p.sendMessage(Main.prefix_success + "Le joueur " + targetPlayer.getDisplayName() + " à été §9Unfreeze");
                                 return true;
                             }
                         }else {
-                            p.sendMessage(Main.prefix_error + "Le joueur : " + target + " est déja freeze !");
+                            p.sendMessage(Main.prefix_error + "Le joueur " + targetPlayer.getDisplayName() + " est déjà freeze");
                             return false;
                         }
                     }else {
