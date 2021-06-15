@@ -56,7 +56,7 @@ public class commandGM implements CommandExecutor {
 
                     if(args[1].equalsIgnoreCase("0") || args[1].equalsIgnoreCase("s")){
                         target.setGameMode(GameMode.SURVIVAL);
-                        p.sendMessage(Main.prefix_success + "Le mode de jeu de " + target.getDisplayName() + " §fa été défini sur §9SURVIVAL");
+                        p.sendMessage(Main.prefix_success + "Le mode de jeu de §2" + target.getDisplayName() + " §fa été défini sur §9SURVIVAL");
                         target.sendMessage(Main.prefix_success + "Votre mode de jeu a été défini sur §9SURVIVAL");
                         return true;
                     }else if(args[1].equalsIgnoreCase("1") || args[1].equalsIgnoreCase("c")){

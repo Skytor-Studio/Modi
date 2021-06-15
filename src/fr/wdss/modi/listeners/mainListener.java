@@ -2,12 +2,16 @@ package fr.wdss.modi.listeners;
 
 import fr.wdss.modi.Main;
 import fr.wdss.modi.utils.modiPermissions;
+import org.bukkit.Material;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class mainListener implements Listener {
     private Main main;
@@ -27,6 +31,7 @@ public class mainListener implements Listener {
         if(p.isOp()){
             p.sendMessage(Main.prefix + "§aCe serveur, est propulsée par le plugin §6Modi§a, crée par §6Mr.Wabezeter §ade la §6W.D.S.S. §a!");
         }
+
     }
 
     @EventHandler

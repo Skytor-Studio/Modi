@@ -4,8 +4,10 @@ version: 0.1
 api-version: 1.16
 main: fr.wdss.modi.Main
 commands:
-  mod:
+  staff:
   chat:
   freeze:
   maintenance:
   gm:
+  tablist:
+  dm:
