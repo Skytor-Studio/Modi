@@ -11,3 +11,5 @@ commands:
   gm:
   tablist:
   dm:
+  ban:
+  unban:

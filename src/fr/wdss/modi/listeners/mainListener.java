@@ -3,6 +3,8 @@ package fr.wdss.modi.listeners;
 import fr.wdss.modi.Main;
 import fr.wdss.modi.utils.modiPermissions;
 import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,6 +14,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class mainListener implements Listener {
     private Main main;
@@ -21,6 +24,12 @@ public class mainListener implements Listener {
     public void onJoin(PlayerJoinEvent e){
         Player p = e.getPlayer();
 
+        FileConfiguration banConfig = YamlConfiguration.loadConfiguration(main.getFile("ban"));
+        if(banConfig.contains("Players." + p.getName() + ".status")){
+            if(banConfig.getString("Players." + p.getName() + ".status").equalsIgnoreCase("on")){
+                p.kickPlayer(banConfig.getString("Players." + p.getName() + ".reason"));
+            }
+        }
         if(Main.Maintenance == true){
             if(p.isOp() || p.hasPermission(new modiPermissions().maintenanceEnter)){
                 p.sendMessage(Main.prefix + "§aLe serveur est actuellement en §6Maintenance §a!");

@@ -3,6 +3,8 @@ package fr.wdss.modi;
 import fr.wdss.modi.commands.*;
 import fr.wdss.modi.listeners.mainListener;
 import fr.wdss.modi.listeners.modListener;
+import fr.wdss.modi.utils.modiPermissions;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -14,9 +16,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main extends JavaPlugin {
-    public static String version = "1.2";
+    public static String version = "1.3";
     public static String prefix = " §6Modi §7=> §f";
-    public static String prefix_error = " §6Modi§7/§4Error §7=> §c";
+    public static String prefix_error = " §6Modi/§4Error §7=> §c";
     public static String prefix_success = "§f► ";
 
     public static String notAPlayer = prefix_error + "Vous n'êtes pas un joueur donc vous ne pouvez pas utiliser cette commande ! ";
@@ -31,6 +33,9 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        if(getConfig().getString("Mod.maintenance").equalsIgnoreCase("on")){
+            Maintenance = true;
+        }
         System.out.println("Modi => Enable of Modi Moderation in version : " + version);
         System.out.println("Modi => Made by Wabezeter, Director of W.D.S.S. !");
 
@@ -42,12 +47,15 @@ public class Main extends JavaPlugin {
         getCommand("staff").setExecutor(new commandStaff(this));
         getCommand("chat").setExecutor(new commandChat());
         getCommand("freeze").setExecutor(new commandFreeze());
-        getCommand("maintenance").setExecutor(new commandMaintenance());
+        getCommand("maintenance").setExecutor(new commandMaintenance(this));
         getCommand("gm").setExecutor(new commandGM());
-        getCommand("tablist").setExecutor(new commandTabList(this));
+        getCommand("tablist").setExecutor(new commandTablist(this));
         getCommand("dm").setExecutor(new commandDM());
+        getCommand("ban").setExecutor(new commandBan(this));
+        getCommand("unban").setExecutor(new commandBan(this));
 
         createFile("staff");
+        createFile("ban");
     }
 
     @Override

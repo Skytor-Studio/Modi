@@ -18,5 +18,9 @@ public class modiPermissions {
     public Permission gm = new Permission("modi.gm");
     //permission for tablist
     public Permission tablist = new Permission("modi.tablist");
+    //Permission for Ban
+    public Permission ban = new Permission("modi.ban.ban");
+    //Permission for Unban
+    public Permission unban = new Permission("modi.ban.unban");
 
 }

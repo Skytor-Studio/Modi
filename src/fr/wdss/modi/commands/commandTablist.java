@@ -20,9 +20,9 @@ import org.bukkit.inventory.meta.SkullMeta;
 import java.lang.reflect.Field;
 import java.util.UUID;
 
-public class commandTabList implements CommandExecutor {
+public class commandTablist implements CommandExecutor {
     public Main main;
-    public commandTabList(Main main) { this.main = main; }
+    public commandTablist(Main main) { this.main = main; }
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
