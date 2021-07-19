@@ -22,5 +22,7 @@ public class modiPermissions {
     public Permission ban = new Permission("modi.ban.ban");
     //Permission for Unban
     public Permission unban = new Permission("modi.ban.unban");
+    //Permission for Warp
+    public Permission warp = new Permission("modi.warp");
 
 }

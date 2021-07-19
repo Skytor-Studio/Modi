@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main extends JavaPlugin {
-    public static String version = "1.3";
+    public static String version = "1.5";
     public static String prefix = " §6Modi §7=> §f";
     public static String prefix_error = " §6Modi/§4Error §7=> §c";
     public static String prefix_success = "§f► ";
@@ -53,9 +53,11 @@ public class Main extends JavaPlugin {
         getCommand("dm").setExecutor(new commandDM());
         getCommand("ban").setExecutor(new commandBan(this));
         getCommand("unban").setExecutor(new commandBan(this));
+        getCommand("warp").setExecutor(new commandWarp(this));
 
         createFile("staff");
         createFile("ban");
+        createFile("warp");
     }
 
     @Override

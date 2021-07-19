@@ -13,3 +13,4 @@ commands:
   dm:
   ban:
   unban:
+  warp:
